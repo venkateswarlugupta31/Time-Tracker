@@ -1,16 +1,13 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:time_tracker_flutter_course/services/auth.dart';
 
 class HomePage extends StatelessWidget {
-  final VoidCallback onSignOut;
   final AuthBase auth;
-  HomePage({@required this.onSignOut, @required this.auth});
+  HomePage({@required this.auth});
 
   Future<void> _signOut() async {
     try {
       await auth.signOut();
-      onSignOut();
     } catch (e) {
       print(e.toString());
     }
@@ -29,6 +26,16 @@ class HomePage extends StatelessWidget {
             ),
             onPressed: _signOut,
           )
+        ],
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            height: 200,
+            width: 200,
+            color: Colors.blue,
+          ),
         ],
       ),
     );

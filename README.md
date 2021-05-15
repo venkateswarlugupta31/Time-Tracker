@@ -1,4 +1,4 @@
-# time_tracker_flutter_course
+# Time Tracker
 
 A new Flutter application.
 
